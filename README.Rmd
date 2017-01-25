@@ -1,0 +1,4 @@
+
+This is Introduction to Open Data Science 
+Spring 2017 
+https://elinaturunen.github.io/IODS-project/
