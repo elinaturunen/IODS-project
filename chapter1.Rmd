@@ -1,4 +1,4 @@
 
 # About the project
 
-This is the Introduction to Open Data Science course --- Spring 2017 <https://github.com/elinaturunen/IODS-project>
+This is Introduction to Open Data Science course --- Spring 2017 <https://github.com/elinaturunen/IODS-project>
