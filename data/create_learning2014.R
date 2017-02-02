@@ -56,15 +56,18 @@ dim(learning2014)
 
 ?write.csv
 
-# working directory to iods project folder
+# set working directory of R session the iods project folder
+setwd("~/Desktop/IODS-project/data")
 
 # save data set
-# file /Users/elinaturunen/Desktop/IODS-project/data/XXX ?
-# x = osoite ?
-
-write.table(x, file = "", append = FALSE, quote = TRUE, sep = " ",
+write.table(learning2014, file = "learning2014.txt", append = FALSE, quote = TRUE, sep = "\t",
             eol = "\n", na = "NA", dec = ".", row.names = TRUE,
-            col.names = TRUE, qmethod = c("escape", "double"),
-            fileEncoding = "")
+            col.names = TRUE)
 
-http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS3-data.txt
+# read table
+read.table("learning2014.txt")
+
+str(learning2014)
+
+head(learning2014)
+
