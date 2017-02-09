@@ -141,24 +141,105 @@ $(document).ready(function () {
 <div id="TOC">
 <ul>
 <li><a href="#about-the-project">About the project</a></li>
-<li><a href="#insert-chapter-2-title-here">Insert chapter 2 title here</a></li>
+<li><a href="#rstudio-exercise-2-analysis">RStudio Exercise 2 Analysis</a></li>
+<li><a href="#part-1-explore-the-structure-and-the-dimensions-of-the-data-and-describe-the-dataset-briefly-assuming-the-reader-has-no-previous-knowledge-of-it.">Part 1: Explore the structure and the dimensions of the data and describe the dataset briefly, assuming the reader has no previous knowledge of it.</a></li>
+<li><a href="#read-library">read library</a></li>
+<li><a href="#read-data-structure-and-dimensions">read data, structure and dimensions</a></li>
+<li><a href="#part-2-show-a-graphical-overview-of-the-data-and-show-summaries-of-the-variables-in-the-data.-describe-and-interpret-the-outputs-commenting-on-the-distributions-of-the-variables-and-the-relationships-between-them.">Part 2: Show a graphical overview of the data and show summaries of the variables in the data. Describe and interpret the outputs, commenting on the distributions of the variables and the relationships between them.</a></li>
+<li><a href="#install-and-access-the-gglot2-library">install and access the gglot2 library</a></li>
+<li><a href="#create-a-plot-matrix">create a plot matrix</a></li>
+<li><a href="#initialize-plot-with-data-and-aesthetic-mapping">initialize plot with data and aesthetic mapping</a></li>
+<li><a href="#laatikkojana-x-sp-y-jatkuva">laatikkojana (x sp y jatkuva)</a></li>
+<li><a href="#part-3-choose-three-variables-as-explanatory-variables-and-fit-a-regression-model-where-exam-points-is-the-target-dependent-variable.-show-a-summary-of-the-fitted-model-and-comment-and-interpret-the-results.-explain-and-interpret-the-statistical-test-related-to-the-model-parameters.-if-an-explanatory-variable-in-your-model-does-not-have-a-statistically-significant-relationship-with-the-target-variable-remove-the-variable-from-the-model-and-fit-the-model-again-without-it.">Part 3: Choose three variables as explanatory variables and fit a regression model where exam points is the target (dependent) variable. Show a summary of the fitted model and comment and interpret the results. Explain and interpret the statistical test related to the model parameters. If an explanatory variable in your model does not have a statistically significant relationship with the target variable, remove the variable from the model and fit the model again without it.</a></li>
+<li><a href="#create-an-plot-matrix-with-ggpairs">create an plot matrix with ggpairs()</a></li>
+<li><a href="#create-a-regression-model-with-multiple-explanatory-variables">create a regression model with multiple explanatory variables</a></li>
+<li><a href="#print-out-a-summary-of-the-model">print out a summary of the model</a></li>
+<li><a href="#comment-and-interpret-the-results.-explain-and-interpret-the-statistical-test-related-to-the-model-parameters.-if-an-explanatory-variable-in-your-model-does-not-have-a-statistically-significant-relationship-with-the-target-variable-remove-the-variable-from-the-model-and-fit-the-model-again-without-it.">comment and interpret the results. / Explain and interpret the statistical test related to the model parameters. (/ If an explanatory variable in your model does not have a statistically significant relationship with the target variable, remove the variable from the model and fit the model again without it.)</a></li>
+<li><a href="#part-4-using-a-summary-of-your-fitted-model-explain-the-relationship-between-the-chosen-explanatory-variables-and-the-target-variable-interpret-the-model-parameters.-explain-and-interpret-the-multiple-r-squared-of-the-model.">Part 4: Using a summary of your fitted model, explain the relationship between the chosen explanatory variables and the target variable (interpret the model parameters). Explain and interpret the multiple R squared of the model.</a></li>
+<li><a href="#part-5-produce-the-following-diagnostic-plots-residuals-vs-fitted-values-normal-qq-plot-and-residuals-vs-leverage.-explain-the-assumptions-of-the-model-and-interpret-the-validity-of-those-assumptions-based-on-the-diagnostic-plots.">Part 5: Produce the following diagnostic plots: Residuals vs Fitted values, Normal QQ-plot and Residuals vs Leverage. Explain the assumptions of the model and interpret the validity of those assumptions based on the diagnostic plots.</a></li>
+<li><a href="#draw-diagnostic-plots-using-the-plot-function.">draw diagnostic plots using the plot() function.</a></li>
 </ul>
 </div>
 
 <hr />
 <div id="about-the-project" class="section level1">
 <h1>About the project</h1>
-<p>This is the Introduction to Open Data Science course — Spring 2017 <a href="https://github.com/elinaturunen/IODS-project" class="uri">https://github.com/elinaturunen/IODS-project</a></p>
+<p>This is Introduction to Open Data Science course — Spring 2017 <a href="https://github.com/elinaturunen/IODS-project" class="uri">https://github.com/elinaturunen/IODS-project</a></p>
 <hr />
 </div>
-<div id="insert-chapter-2-title-here" class="section level1">
-<h1>Insert chapter 2 title here</h1>
+<div id="rstudio-exercise-2-analysis" class="section level1">
+<h1>RStudio Exercise 2 Analysis</h1>
 <p><em>Describe the work you have done this week and summarize your learning.</em></p>
 <ul>
 <li>Describe your work and results clearly.</li>
 <li>Assume the reader has an introductory course level understanding of writing and reading R code as well as statistical methods</li>
-<li>Assume the reader has no previous knowledge of your data or the more advanced methods you are using</li>
+<li>Assume the reader has no previous knowledge of your data or the more advanced methods you are using<br />
+</li>
+<li>INCLUDE CODES, INTERPRETATIONS AND EXPLANATIONS</li>
 </ul>
+</div>
+<div id="part-1-explore-the-structure-and-the-dimensions-of-the-data-and-describe-the-dataset-briefly-assuming-the-reader-has-no-previous-knowledge-of-it." class="section level1">
+<h1>Part 1: Explore the structure and the dimensions of the data and describe the dataset briefly, assuming the reader has no previous knowledge of it.</h1>
+</div>
+<div id="read-library" class="section level1">
+<h1>read library</h1>
+<p>library(dplyr)</p>
+</div>
+<div id="read-data-structure-and-dimensions" class="section level1">
+<h1>read data, structure and dimensions</h1>
+<p>read.table(“learning2014.txt”) str(learning2014) dim(learning2014)</p>
+<p>The data set concerns an international survey of Approaches to Learning describing different aspects of learning. There were 183 responses alltogether, but here answers with 0 exam points are excluded. This analysis data set includes variables that are student’s gender, age, learning related variables that are global attitude toward statistics, deep, strategic and surface approach to learning (values 1-5) and exam points. The dimensions of the data comprehend 7 variables and 166 observations.</p>
+</div>
+<div id="part-2-show-a-graphical-overview-of-the-data-and-show-summaries-of-the-variables-in-the-data.-describe-and-interpret-the-outputs-commenting-on-the-distributions-of-the-variables-and-the-relationships-between-them." class="section level1">
+<h1>Part 2: Show a graphical overview of the data and show summaries of the variables in the data. Describe and interpret the outputs, commenting on the distributions of the variables and the relationships between them.</h1>
+</div>
+<div id="install-and-access-the-gglot2-library" class="section level1">
+<h1>install and access the gglot2 library</h1>
+<p>install.packages(“ggplot2”) library(ggplot2)</p>
+<p>library(dplyr)</p>
+<p>install.packages(“GGally”) library(GGally)</p>
+</div>
+<div id="create-a-plot-matrix" class="section level1">
+<h1>create a plot matrix</h1>
+<p>p &lt;- ggpairs(learning2014, mapping = aes(), lower = list(combo = wrap(“facethist”, bins = 20)))</p>
+</div>
+<div id="initialize-plot-with-data-and-aesthetic-mapping" class="section level1">
+<h1>initialize plot with data and aesthetic mapping</h1>
+<p>p1 &lt;- ggplot(learning2014, aes(x= attitude, y = points)) # initialize plot with data and aesthetic mapping + color p1 &lt;- ggplot(learning2014, aes(x = attitude, y = points), col = “gender”) # define the visualization type (points) p2 &lt;- p1 + geom_point(aes(x = attitude, y = points)) # draw the plot p2</p>
+</div>
+<div id="laatikkojana-x-sp-y-jatkuva" class="section level1">
+<h1>laatikkojana (x sp y jatkuva)</h1>
+<p>p2 &lt;- p1 + geom_boxplot(aes(x = gender, y = points))</p>
+<p>Describe and interpret the outputs, commenting on the distributions of the variables and the relationships between them.</p>
+<p>Gender Age Attitude toward statistics… Deep learning variable… Strategic learning… Surface learning… Exam points..</p>
+</div>
+<div id="part-3-choose-three-variables-as-explanatory-variables-and-fit-a-regression-model-where-exam-points-is-the-target-dependent-variable.-show-a-summary-of-the-fitted-model-and-comment-and-interpret-the-results.-explain-and-interpret-the-statistical-test-related-to-the-model-parameters.-if-an-explanatory-variable-in-your-model-does-not-have-a-statistically-significant-relationship-with-the-target-variable-remove-the-variable-from-the-model-and-fit-the-model-again-without-it." class="section level1">
+<h1>Part 3: Choose three variables as explanatory variables and fit a regression model where exam points is the target (dependent) variable. Show a summary of the fitted model and comment and interpret the results. Explain and interpret the statistical test related to the model parameters. If an explanatory variable in your model does not have a statistically significant relationship with the target variable, remove the variable from the model and fit the model again without it.</h1>
+</div>
+<div id="create-an-plot-matrix-with-ggpairs" class="section level1">
+<h1>create an plot matrix with ggpairs()</h1>
+<p>ggpairs(learning2014, lower = list(combo = wrap(“facethist”, bins = 20)))</p>
+</div>
+<div id="create-a-regression-model-with-multiple-explanatory-variables" class="section level1">
+<h1>create a regression model with multiple explanatory variables</h1>
+<p>my_model &lt;- lm(points ~ attitude + stra + deep, data = learning2014)</p>
+</div>
+<div id="print-out-a-summary-of-the-model" class="section level1">
+<h1>print out a summary of the model</h1>
+<p>summary(my_model)</p>
+</div>
+<div id="comment-and-interpret-the-results.-explain-and-interpret-the-statistical-test-related-to-the-model-parameters.-if-an-explanatory-variable-in-your-model-does-not-have-a-statistically-significant-relationship-with-the-target-variable-remove-the-variable-from-the-model-and-fit-the-model-again-without-it." class="section level1">
+<h1>comment and interpret the results. / Explain and interpret the statistical test related to the model parameters. (/ If an explanatory variable in your model does not have a statistically significant relationship with the target variable, remove the variable from the model and fit the model again without it.)</h1>
+</div>
+<div id="part-4-using-a-summary-of-your-fitted-model-explain-the-relationship-between-the-chosen-explanatory-variables-and-the-target-variable-interpret-the-model-parameters.-explain-and-interpret-the-multiple-r-squared-of-the-model." class="section level1">
+<h1>Part 4: Using a summary of your fitted model, explain the relationship between the chosen explanatory variables and the target variable (interpret the model parameters). Explain and interpret the multiple R squared of the model.</h1>
+</div>
+<div id="part-5-produce-the-following-diagnostic-plots-residuals-vs-fitted-values-normal-qq-plot-and-residuals-vs-leverage.-explain-the-assumptions-of-the-model-and-interpret-the-validity-of-those-assumptions-based-on-the-diagnostic-plots." class="section level1">
+<h1>Part 5: Produce the following diagnostic plots: Residuals vs Fitted values, Normal QQ-plot and Residuals vs Leverage. Explain the assumptions of the model and interpret the validity of those assumptions based on the diagnostic plots.</h1>
+</div>
+<div id="draw-diagnostic-plots-using-the-plot-function." class="section level1">
+<h1>draw diagnostic plots using the plot() function.</h1>
+<p>plot(my_model, which = c(1, 2, 5))</p>
 <hr />
 </div>
 

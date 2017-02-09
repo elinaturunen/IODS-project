@@ -1,7 +1,79 @@
-# Insert chapter 2 title here
+# RStudio Exercise 2 Analysis
 
 *Describe the work you have done this week and summarize your learning.*
 
 - Describe your work and results clearly. 
 - Assume the reader has an introductory course level understanding of writing and reading R code as well as statistical methods
 - Assume the reader has no previous knowledge of your data or the more advanced methods you are using  
+- INCLUDE CODES, INTERPRETATIONS AND EXPLANATIONS 
+
+# Part 1: Explore the structure and the dimensions of the data and describe the dataset briefly, assuming the reader has no previous knowledge of it.
+
+# read library
+library(dplyr)
+
+# read data, structure and dimensions
+read.table("learning2014.txt")
+str(learning2014)
+dim(learning2014)
+
+The data set concerns an international survey of Approaches to Learning describing different aspects of learning. There were 183 responses alltogether, but here answers with 0 exam points are excluded. This analysis data set includes variables that are student's gender, age, learning related variables that are global attitude toward statistics, deep, strategic and surface approach to learning (values 1-5) and exam points. The dimensions of the data comprehend 7 variables and 166 observations.
+
+# Part 2: Show a graphical overview of the data and show summaries of the variables in the data. Describe and interpret the outputs, commenting on the distributions of the variables and the relationships between them. 
+
+# install and access the gglot2 library
+install.packages("ggplot2")
+library(ggplot2)
+
+library(dplyr)
+
+install.packages("GGally")
+library(GGally)
+
+# create a plot matrix
+p <- ggpairs(learning2014, mapping = aes(), lower = list(combo = wrap("facethist", bins = 20)))
+
+# initialize plot with data and aesthetic mapping
+p1 <- ggplot(learning2014, aes(x= attitude, y = points))
+# initialize plot with data and aesthetic mapping + color
+p1 <- ggplot(learning2014, aes(x = attitude, y = points), col = "gender")
+# define the visualization type (points)
+p2 <- p1 + geom_point(aes(x = attitude, y = points))
+# draw the plot
+p2
+
+# laatikkojana (x sp y jatkuva)
+p2 <- p1 + geom_boxplot(aes(x = gender, y = points))
+
+Describe and interpret the outputs, commenting on the distributions of the variables and the relationships between them.
+ 
+Gender
+Age
+Attitude toward statistics...
+Deep learning variable... 
+Strategic learning...
+Surface learning...
+Exam points..
+
+
+# Part 3: Choose three variables as explanatory variables and fit a regression model where exam points is the target (dependent) variable. Show a summary of the fitted model and comment and interpret the results. Explain and interpret the statistical test related to the model parameters. If an explanatory variable in your model does not have a statistically significant relationship with the target variable, remove the variable from the model and fit the model again without it. 
+
+# create an plot matrix with ggpairs()
+ggpairs(learning2014, lower = list(combo = wrap("facethist", bins = 20)))
+
+# create a regression model with multiple explanatory variables
+my_model <- lm(points ~ attitude + stra + deep, data = learning2014)
+
+# print out a summary of the model
+summary(my_model)
+
+# comment and interpret the results. / Explain and interpret the statistical test related to the model parameters. (/ If an explanatory variable in your model does not have a statistically significant relationship with the target variable, remove the variable from the model and fit the model again without it.) 
+
+# Part 4: Using a summary of your fitted model, explain the relationship between the chosen explanatory variables and the target variable (interpret the model parameters). Explain and interpret the multiple R squared of the model.
+
+# Part 5: Produce the following diagnostic plots: Residuals vs Fitted values, Normal QQ-plot and Residuals vs Leverage. Explain the assumptions of the model and interpret the validity of those assumptions based on the diagnostic plots.
+
+# draw diagnostic plots using the plot() function.
+plot(my_model, which = c(1, 2, 5))
+
+
