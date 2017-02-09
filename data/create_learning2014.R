@@ -28,7 +28,7 @@ install.packages("dplyr")
 
 library("dplyr")
 
-# Tai pitäisikö tässä tehdä ensin deep_column
+# Tee columns deep_column etc
 
 deep_columns <- select(lrn14, one_of(deep_questions))
 lrn14$deep <- rowMeans(deep_columns)
@@ -73,3 +73,13 @@ head(learning2014)
 
 dim(learning2014)
 
+install.packages("ggplot2")
+library(ggplot2)
+
+library(dplyr)
+
+install.packages("GGally")
+library(GGally)
+
+# create a plot matrix
+p <- ggpairs(learning2014, mapping = aes(), lower = list(combo = wrap("facethist", bins = 20)))
