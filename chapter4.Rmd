@@ -380,7 +380,7 @@ lda.arrows(lda.fit, myscale = 3)
 
 ![Lda Boston](lda boston bonus.png)
 
-I chose to divide values of the variables into 4 clusters. LD explains 76 % of the between group variance. Accordingly in the coefficients of linear discriminants can be seen that most influencial linear separators for the clusters are (in this order) proportion of non-retail business acres (indus), nitrogen oxide concentration (nox), accessibility to radial highways (rad), proportion of residential land zoned for lots over 25,000 sq.ft. (zn) and proportion of blacks (black).
+I chose to divide values of the variables into 4 clusters. LD1 explains 76 % of the between group variance. Accordingly in the coefficients of linear discriminants can be seen that most influencial linear separators for the clusters are proportion of non-retail business acres (indus), nitrogen oxide concentration (nox), accessibility to radial highways (rad), proportion of residential land zoned for lots over 25,000 sq.ft. (zn) and proportion of blacks (black).
 
 
 
