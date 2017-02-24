@@ -152,8 +152,6 @@ dim(human2)
 
 library(MASS); library(tidyr); library(dplyr); library(ggplot2); library(GGally)
 
-pairs(human)
-
 ggpairs
 p <- ggpairs(human2, mapping = aes(), lower = list(combo = wrap("facethist", bins = 20)))
 p
@@ -165,13 +163,8 @@ summary(human2)
 
 # Part 3
 
-# perform principal component analysis (with the SVD method)
+# perform principal component analysis 
 pca_human2 <- prcomp(human2)
-
-# draw a biplot of the principal component representation and the original variables
-biplot(pca_human2, choices = 1:2, cex = c(0.5, 1.5), sub = "Principal components explaining variance in non-standardized human2 data")
-
-TAI TÄMÄ
 
 # create and print out a summary of pca_human
 s <- summary(pca_human2)
@@ -198,13 +191,9 @@ human2_std <- scale(human2)
 # print out summaries of the standardized variables
 summary(human2_std) 
 
-# perform principal component analysis (with the SVD method)
+# principal component analysis
 pca_human2_std <- prcomp(human2_std)
   
-# draw a biplot of the principal component representation and the original variables
-biplot(pca_human2_std, choices = 1:2, cex = c(0.5, 1.5), sub = "Principal components explaining variance in standardized human2 data")
-
-
 # create and print out a summary of pca_human
 s_std <- summary(pca_human2_std)
 s_std
